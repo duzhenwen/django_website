@@ -1,0 +1,22 @@
+{% extends "password_reset/base.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "Password recovery" %}{% endblock %}
+
+{% block content %}
+
+	<form method="post"  class="form-horizontal" action="{{ url }}">
+		{% csrf_token %}
+		<div class="form-group" style="margin-top:30px;">
+			<label for="id_username_or_email" class="control-label col-sm-3">Username or Email:</label>
+			<div class="col-sm-4">
+				<input type="text" class="form-control" name="username_or_email" id="id_username_or_email">
+			</div>
+		</div>
+		<input type="submit" class="btn btn-primary" style="margin-left:400px;"  value="{% trans 'submit ' %}">
+	</form>
+{% endblock %}
+
+
+
+

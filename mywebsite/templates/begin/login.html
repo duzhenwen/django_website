@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block title %} register {% endblock %}
+{% block content %}
+<div class="text-center">
+    <div class="panel panel-default col-sm-6" style="margin-top:30px; height:280px;">
+    <h2 style="margin-left:40px;">login</h2>
+    <form class="form-horizontal" action="" method="post">
+    {% csrf_token %}
+        <div class="row">
+           <div class="form-group">
+               <label for="username" class="control-label col-sm-4">Username</label>
+               <div  class="col-sm-6">
+               <input type="text" name="username" id="username" class="form-control">
+               </div>
+           </div>
+        </div>
+        <div class="row">
+            <div class="form-group ">
+                <label for="password" class="control-label col-sm-4">Password</label>
+                <div class="col-sm-6">
+               <input type="text" name="password" id="password" class="form-control ">
+                </div>
+            </div>
+        </div>
+        <div  class="checkbox">
+            <label style="margin-left:60px;">
+            <input type="checkbox" >记住密码
+            </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <span>
+                <a href="" style="text-decoration:none;color:#000000;">忘了密码|</a>
+                <a href="{% url 'register' %}" style="text-decoration:none;color:#000000;">注册</a>
+            </span>
+        </div>
+        <div class="row" style="margin-top:15px;">
+             <input type="submit"  class="btn btn-primary" style="margin-left:40px;" value="login">
+        </div>
+    </form>
+    </div>
+{% endblock %}
+</div>
+
+
